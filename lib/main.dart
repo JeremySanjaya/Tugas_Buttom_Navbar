@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       initialRoute: '/',
       getPages: [
-        // List All Pages Here
         GetPage(
           name: '/',
           page: () => const LoginPage(),
