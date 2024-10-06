@@ -63,12 +63,6 @@ class HomePage extends StatelessWidget {
                   activeIcon: Icon(Icons.home, color: Colors.orange),
                   label: "Home",
                 ),
-                // Remove the search item
-                // BottomNavigationBarItem(
-                //   icon: Icon(Icons.search_outlined),
-                //   activeIcon: Icon(Icons.search, color: Colors.orange),
-                //   label: "Search",
-                // ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.shopping_cart_outlined),
                   activeIcon: Icon(Icons.shopping_cart, color: Colors.orange),
