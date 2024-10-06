@@ -26,13 +26,13 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final Color backgroundColor = Colors.white.withOpacity(0.8);
-    final Color buttonBackgroundColor = Color.fromARGB(255, 187, 211, 251);
+    final Color backgroundColor = Colors.white;
+    final Color buttonBackgroundColor = Color.fromARGB(255, 255, 102, 0); // Orange color
 
     return Scaffold(
       appBar: AppBar(
         title: const Text("Login"),
-        backgroundColor: Color.fromARGB(255, 187, 211, 251),
+        backgroundColor: buttonBackgroundColor, // Orange background for AppBar
         elevation: 0,
       ),
       body: Stack(
@@ -41,9 +41,9 @@ class _LoginPageState extends State<LoginPage> {
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color.fromARGB(255, 187, 211, 251),
-                  Color.fromARGB(255, 0, 7, 14),
-                ], // Dark gradient background
+                  Color.fromARGB(255, 255, 165, 0), // Lighter orange
+                  Color.fromARGB(255, 255, 102, 0), // Darker orange
+                ], // Orange gradient background
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     const SizedBox(height: 20),
                     const Text(
-                      "Selamat Datang",
+                      "Welcome to Shoes Store",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
@@ -75,12 +75,18 @@ class _LoginPageState extends State<LoginPage> {
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 20),
+                    Image.asset(
+                      'assets/images/Air_Jordan.png', // Add a shoe-related image here
+                      height: 120, // Adjust height as needed
+                    ),
+                    const SizedBox(height: 20),
                     TextField(
                       controller: _usernameController,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: backgroundColor,
                         labelText: "Username",
+                        labelStyle: TextStyle(color: Colors.orange), // Orange label text
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30.0),
                         ),
@@ -93,6 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                         filled: true,
                         fillColor: backgroundColor,
                         labelText: "Password",
+                        labelStyle: TextStyle(color: Colors.orange), // Orange label text
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30.0),
                         ),
@@ -117,14 +124,14 @@ class _LoginPageState extends State<LoginPage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          backgroundColor: buttonBackgroundColor,
-                          shadowColor: Colors.blueAccent,
+                          backgroundColor: buttonBackgroundColor, // Orange button
+                          shadowColor: Colors.deepOrange,
                           elevation: 5,
                         ),
                         onPressed: _validateLogin,
                         child: const Text(
                           "Login",
-                          style: TextStyle(fontSize: 18, color: Colors.black),
+                          style: TextStyle(fontSize: 18, color: Colors.white),
                         ),
                       ),
                     ),
