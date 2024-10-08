@@ -8,7 +8,6 @@ class Cart extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            // Go back action
           },
         ),
         title: Text('Cart'),
@@ -16,7 +15,6 @@ class Cart extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.shopping_cart),
             onPressed: () {
-              // Cart action
             },
           )
         ],
@@ -93,14 +91,12 @@ class Cart extends StatelessWidget {
                 IconButton(
                   icon: Icon(Icons.remove_circle_outline),
                   onPressed: () {
-                    // Decrease quantity action
                   },
                 ),
                 Text('1'),
                 IconButton(
                   icon: Icon(Icons.add_circle_outline),
                   onPressed: () {
-                    // Increase quantity action
                   },
                 ),
               ],
@@ -108,7 +104,6 @@ class Cart extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.delete_outline, color: Colors.red),
               onPressed: () {
-                // Remove item action
               },
             )
           ],
@@ -140,11 +135,10 @@ class Cart extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          // Checkout action
         },
         child: Text('Checkout'),
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.orange, // Updated button color
+          backgroundColor: Colors.orange, 
           padding: EdgeInsets.symmetric(vertical: 16.0),
         ),
       ),
