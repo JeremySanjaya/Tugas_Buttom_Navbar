@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tugas_buttom_navbar/bindings/login_bindings.dart';
 import 'home_page.dart';
 import 'login_page.dart';
-import 'package:tugas_buttom_navbar/bindings/login_bindings.dart';
+import 'bookmark_page.dart'; // Import BookmarkPage
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/',
           page: () => const LoginPage(),
-          binding: LoginBindings(), 
+          binding: LoginBindings(),
         ),
         GetPage(
           name: '/homepage',

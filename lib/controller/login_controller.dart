@@ -13,11 +13,4 @@ class LoginController extends GetxController {
       errorMessage.value = "Username atau Password Anda Salah";
     }
   }
-
-  @override
-  void onClose() {
-    usernameController.dispose();
-    passwordController.dispose();
-    super.onClose();
-  }
 }

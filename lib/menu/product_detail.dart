@@ -1,54 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:tugas_buttom_navbar/models/shoe_model.dart';
 
 class ProductDetail extends StatelessWidget {
-  final String productName;
-  final String productPrice;
-  final String productImage;
+  final ShoeModel product;
 
-  const ProductDetail({
-    Key? key,
-    required this.productName,
-    required this.productPrice,
-    required this.productImage,
-  }) : super(key: key);
+  const ProductDetail({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(productName),
+        title: Text(product.name),
       ),
-      body: SingleChildScrollView(
-        // Wrap in SingleChildScrollView
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              Image.asset(productImage), // Display the product image
-              SizedBox(height: 16),
-              Text(
-                productName,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 8),
-              Text(
-                productPrice,
-                style: TextStyle(fontSize: 20, color: Colors.orange),
-              ),
-              SizedBox(height: 16),
-              // Additional details (e.g., description, sizes, colors)
-              Text("Description"),
-              // Add other widgets for colors, sizes, etc.
-              // For now, just a placeholder
-              SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {
-                  // Add to cart functionality can be added here
-                },
-                child: Text('Add to Cart'),
-              ),
-            ],
-          ),
+      body: SingleChildScrollView( 
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              product.imageUrl,
+              fit: BoxFit.cover, 
+            ),
+            const SizedBox(height: 16),
+            Text(
+              product.name,
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              'Price: Rp ${product.price.toStringAsFixed(2)}',
+              style: const TextStyle(fontSize: 20),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              product.description.isNotEmpty
+                  ? product.description
+                  : 'No description available.', 
+              style: const TextStyle(fontSize: 16),
+            ),
+          ],
         ),
       ),
     );
